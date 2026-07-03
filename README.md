@@ -37,3 +37,17 @@
 ![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
 ![VS Code](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white)
 ![Azure DevOps](https://img.shields.io/badge/Azure%20DevOps-0078D7?style=for-the-badge&logo=azuredevops&logoColor=white)
+
+---
+## Projects 🚀
+
+### [Credit Score ETL Pipeline](https://github.com/joanasoares0/data_girls_bootcamp_project)
+Capstone project — Data Engineering track, Data Girls Bootcamp 2026.
+
+An end-to-end ETL pipeline that extracts a credit score dataset from Kaggle, cleans and transforms it with pandas, and loads the result into a Databricks Unity Catalog Volume via the Files API.
+- **Transform:** handles corrupted/sentinel values, PII pseudonymization (hashing + reversible ID mapping), type casting, range checks, and outlier/missing-value treatment — with the target column always kept untouched
+- **Orchestration:** Apache Airflow running in Docker, backed by a Postgres metadata database so DAG run history and the admin user survive container rebuilds
+- **Scheduling:** a daily DAG with automatic retries and a failure callback that logs which task/run failed and where to find the logs
+- **Documentation:** every data-quality and architectural decision is explained and justified in the README
+
+`Python` `pandas` `Airflow` `Docker` `Postgres` `Databricks`
