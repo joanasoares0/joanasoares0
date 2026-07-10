@@ -51,3 +51,15 @@ An end-to-end ETL pipeline that extracts a credit score dataset from Kaggle, cle
 - **Documentation:** every data-quality and architectural decision is explained and justified in the README
 
 `Python` `pandas` `Airflow` `Docker` `Postgres` `Databricks`
+
+### [dbt + Snowflake Capstone Project](https://github.com/joanasoares0/dbt_snowflake_capstone_project)
+Capstone project — dbt/Analytics Engineering course.
+A dbt project built on Snowflake from scratch: a medallion-architecture pipeline (raw → staging/bronze → silver) over real public aviation data (~72K airports, ~44K runways, and user comments from OurAirports, joined on the `airport_ident` ICAO code).
+
+- **Incremental models:** built to process new/changed data efficiently rather than full-rebuild every run
+- **Snapshots:** slowly changing dimensions (SCD Type 2) tracked via dbt's built-in snapshot feature
+- **Layered testing:** generic, domain-specific, cross-model, and singular tests, extended with `dbt-expectations`, plus test-failure persistence for debugging
+- **Documentation:** `doc()` blocks, full model/column descriptions, and an interconnection overview tying the whole DAG together
+- **Environment:** managed with `uv` for reproducible Python/dbt tooling
+
+`dbt-core` `Snowflake` `dbt-expectations` `SQL` `uv`
