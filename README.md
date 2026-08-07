@@ -63,3 +63,13 @@ A dbt project built on Snowflake from scratch: a medallion-architecture pipeline
 - **Environment:** managed with `uv` for reproducible Python/dbt tooling
 
 `dbt-core` `Snowflake` `dbt-expectations` `SQL` `uv`
+
+### [Data Cleaning & Analytics Portfolio](https://github.com/joanasoares0/data_project_w_claude)
+Three independent, self-contained data projects, cleaning, static reporting, and a live BI dashboard; each solving the same class of e-commerce/CRM problem with a different final delivery format.
+
+A portfolio repo where every project lives in its own folder with no shared code, its own dataset, and its own README, so eacendently.
+- **Sales data cleaning:** Streamlit app + CLI that diagnoses and fixes a CRM sales export, leaked status fields, flagged/contet capitalization and accentuation, mixed date formats, revenue as BR/US-formatted text, with genuinely missing or unparseable values left untouched and surfaced for manual review, never invented.
+- **Static analytics report:** a CSV → JSON → HTML pipeline that computes e-commerce KPIs (revenue trends, category/brand bregaps, geographic distribution) into small intermediate JSON files and renders a single static report, keeping the ~3,000-row sales table out of memory/context all at once.
+- **Live analytics dashboard:** a multi-page Streamlit dashboard over the same dataset served from a Supabase (Postgres) database read-only via the `anon` key — Sales, Price Positioning, and Customers pages each backed by a pure, unit-tested KPI module, with every formula and data-quality caveat documented.
+
+`Python` `pandas` `Streamlit` `Supabase` `pytest`
