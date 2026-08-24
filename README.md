@@ -41,6 +41,17 @@
 ---
 ## Projects 🚀
 
+### [User Management — Access Request System](https://github.com/joanasoares0/user_mgt_databricks_aidevkit)
+Portfolio case study — Databricks-native replacement for a manual, spreadsheet-and-email access-request process.
+
+A self-service intake app, a guided admin approval app, and a live dashboard, cutting ~17.75 hours of manual admin work down to ~3.25 hours over a 21-day sample — an ~82% reduction — built on Databricks Asset Bundles, Unity Catalog, and Databricks Apps.
+- **Intake app:** guided multi-step Streamlit form for new/edit access requests, live-sourced rule dropdowns, per-domain/person duplicate detection, and an edit-access lookup that resumes an existing or pending request
+- **Admin app:** deterministic slash-command approval console (no LLM in the write path) — grant/deny, comments, ticket management, and full status/rule correction, every write stamped `reviewed_by`/`updated_at`
+- **Data layer:** two Unity Catalog fact tables as the single source of truth, with an AI/BI (Lakeview) dashboard replacing a manual Power BI cross-check
+- **Everything as code:** tables, jobs, apps, and dashboard defined and deployed via Databricks Asset Bundles
+
+`Python` `Streamlit` `Databricks` `Unity Catalog` `Delta Lake` `Databricks Asset Bundles`
+
 ### [Credit Score ETL Pipeline](https://github.com/joanasoares0/data_girls_bootcamp_project)
 Capstone project — Data Engineering track, Data Girls Bootcamp 2026.
 
