@@ -84,3 +84,13 @@ A portfolio repo where every project lives in its own folder with no shared code
 - **Live analytics dashboard:** a multi-page Streamlit dashboard over the same dataset served from a Supabase (Postgres) database read-only via the `anon` key — Sales, Price Positioning, and Customers pages each backed by a pure, unit-tested KPI module, with every formula and data-quality caveat documented.
 
 `Python` `pandas` `Streamlit` `Supabase` `pytest`
+
+### [Walmart Analytics Pipeline — Airflow, dbt & Databricks](https://github.com/joanasoares0/airflow_dbt_databricks_walmart)
+Learning project — agentic databases and dbt orchestration with Cosmos + Airflow.
+An end-to-end pipeline over a synthetic Walmart retail dataset: data is seeded into an agentic Postgres, replicated into Databricks by CDC, modelled with dbt into a medallion architecture (bronze → silver → gold), and scheduled by Airflow. The orchestration layer is deliberately built **twice**, side by side, so the two approaches can be compared directly.
+
+- **Agentic source database:** Ghost Postgres — disposable, forkable, and exposed over MCP, so schema creation and CSV loads were driven conversationally against a throwaway fork; `load_data.py` is kept alongside as the reproducible equivalent
+- **Orchestration A — Astro CLI + Astronomer Cosmos:** Cosmos parses the dbt graph and renders one Airflow task per model, snapshot, and test, so a failing bronze test blocks silver and every node is inspectable in the UI
+- **Orchestration B — plain `docker compose` + `BashOperator`:** the official `apache/airflow` image running one `dbt build` per DAG — coarser granularity, far fewer moving parts
+
+`dbt` `Databricks` `Apache Airflow` `Astronomer Cosmos` `Astro CLI` `Postgres` `MCP` `Docker` `uv`
