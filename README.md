@@ -94,3 +94,12 @@ An end-to-end pipeline over a synthetic Walmart retail dataset: data is seeded i
 - **Orchestration B — plain `docker compose` + `BashOperator`:** the official `apache/airflow` image running one `dbt build` per DAG — coarser granularity, far fewer moving parts
 
 `dbt` `Databricks` `Apache Airflow` `Astronomer Cosmos` `Astro CLI` `Postgres` `MCP` `Docker` `uv`
+
+### [Business Analysis over WhatsApp — AI Agent & Postgres](https://github.com/joanasoares0/analytics_whatsapp_claude)
+A business owner asks a question over WhatsApp and gets back a number, the reason behind it, a recommendation and a chart. An AI agent writes its own SQL and chooses the chart itself.
+
+- **No hard-coded rules:** two tools (`query_data`, `create_chart`) and a description of the database. The agent works out the rest.
+- **Read-only by permission:** the database user can only `SELECT` from two views
+- **Serverless:** a Netlify webhook replies to Meta right away and a background function does the analysis
+
+`Node.js` `PostgreSQL` `Supabase` `OpenAI` `loud API` `QuickChart`
